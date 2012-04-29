@@ -17,7 +17,7 @@ public class ThreeStacks {
 	
 	public void push (int stackNum, int val)
 	{
-		if (top1 > max/3 || top2 > 2*max/3 || top3 > max)
+		if (top1 < 0 || top2 < n/3 || top3 < 2*n/3 )
 		{
 			return;
 		}
@@ -39,10 +39,11 @@ public class ThreeStacks {
 	
 	public int pop (int stackNum)
 	{
-		if (top1 < 0 || top2 < n/3 || top3 < 2*n/3 )
+		if (top1 > max/3 || top2 > 2*max/3 || top3 > max)
 		{
 			return;
 		}
+
 		int temp;
 		
 		if(stackNum == 0)
