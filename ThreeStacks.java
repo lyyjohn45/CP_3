@@ -1,9 +1,8 @@
-
 public class ThreeStacks {
 	private int[] myList;
-	private int top1 = 99;
-	private int top2 = 199;
-	private int top3 = 299;
+	private int top1;
+	private int top2;
+	private int top3;
 	private int max;
 	
 	public ThreeStacks (int n)
@@ -18,7 +17,7 @@ public class ThreeStacks {
 	
 	public void push (int stackNum, int val)
 	{
-		if (top1 < 0 || top2 < max/3 || top3 < 2*max/3)
+		if (top1 < 0 || top2 < n/3 || top3 < 2*n/3 )
 		{
 			return;
 		}
@@ -40,6 +39,11 @@ public class ThreeStacks {
 	
 	public int pop (int stackNum)
 	{
+		if (top1 > max/3 || top2 > 2*max/3 || top3 > max)
+		{
+			return;
+		}
+
 		int temp;
 		
 		if(stackNum == 0)
