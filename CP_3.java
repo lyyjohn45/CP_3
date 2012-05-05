@@ -2,7 +2,7 @@
 public class CP_3 {
 	
 	public static void main(String[] args) {
-		//3.3
+		//3.2
 		//minStack s1 = new minStack();
 		
 		//s1.push(4);
@@ -12,7 +12,7 @@ public class CP_3 {
 		//s1.print();
 		//s1.min();
 		
-		//3.4
+		//3.3
 		//SetOfStacks stacks = new SetOfStacks();
 		
 		//stacks.push(1);
@@ -23,8 +23,8 @@ public class CP_3 {
 		//stacks.push(3)
 
 
-		//3.5
-		HanoiTower t0 = new HanoiTower(0);
+		//3.4
+		/*HanoiTower t0 = new HanoiTower(0);
 		HanoiTower t1 = new HanoiTower(1);
 		HanoiTower t2 = new HanoiTower(2);
 		
@@ -43,7 +43,24 @@ public class CP_3 {
 		//after shift
 		t0.print();
 		t1.print();
-		t2.print();
+		t2.print();*/
+		
+		//3.5
+		
+		SQueue q = new SQueue();
+		q.enqueue(1);
+		q.enqueue(2);
+		q.enqueue(3);
+		q.enqueue(4);
+		q.enqueue(5);
+		
+		q.print();
+		
+		q.dequeue();
+		q.dequeue();
+		q.dequeue();
+		
+		q.print();
 	}
 
 }
