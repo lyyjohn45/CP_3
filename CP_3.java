@@ -1,6 +1,34 @@
 
 public class CP_3 {
 	
+	//3.6
+	public static Stack sortStack (Stack s)
+	{
+		int[] checkMap = new int[255];//assume, this system is 8-bit
+		
+		for(int i = 0; i < checkMap.length -1; i++)
+		{
+			checkMap[i] = 0;
+		}
+		
+		while(!s.isEmpty())
+		{
+			++checkMap[s.pop().val];
+		}
+		
+		for(int i = checkMap.length -1; i > 0; i--)
+		{
+			while(checkMap[i] != 0)
+			{
+				s.push(i);
+				checkMap[i]--;
+			}
+		}
+		
+		return s;
+	}
+
+	
 	public static void main(String[] args) {
 		//3.2
 		//minStack s1 = new minStack();
@@ -47,7 +75,7 @@ public class CP_3 {
 		
 		//3.5
 		
-		SQueue q = new SQueue();
+		/*SQueue q = new SQueue();
 		q.enqueue(1);
 		q.enqueue(2);
 		q.enqueue(3);
@@ -60,7 +88,23 @@ public class CP_3 {
 		q.dequeue();
 		q.dequeue();
 		
-		q.print();
+		q.print();*/
+		
+		//3.6
+		Stack s = new Stack();
+		
+		s.push(3);
+		s.push(2);
+		s.push(6);
+		s.push(8);
+		s.push(2);
+		s.push(9);
+		
+		s.print();
+		
+		s = sortStack(s);
+		
+		s.print();
 	}
 
 }
