@@ -27,6 +27,25 @@ public class CP_3 {
 		
 		return s;
 	}
+	
+	public static Stack sortStack2 (Stack s)
+	{
+		Stack helper = new Stack();
+		
+		while(!s.isEmpty())
+		{
+			Node temp = s.pop();
+			
+			while(!helper.isEmpty() && temp.val > helper.peek().val)
+			{
+				s.push(helper.pop().val);
+			}
+			
+			helper.push(temp.val);
+		}
+		
+		return helper; 
+	}
 
 	
 	public static void main(String[] args) {
@@ -102,7 +121,7 @@ public class CP_3 {
 		
 		s.print();
 		
-		s = sortStack(s);
+		s = sortStack2(s);
 		
 		s.print();
 	}
